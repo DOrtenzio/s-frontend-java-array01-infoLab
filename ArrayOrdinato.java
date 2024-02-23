@@ -12,8 +12,9 @@ public class ArrayOrdinato {
             System.out.print("Stringa "+(paroleinserite+1)+":");
             parole[paroleinserite++]=in.nextLine();
             //Riordino
-            
-        }while (!parole[paroleinserite].equalsIgnoreCase("fine"));
+            if (!parole[paroleinserite-1].equalsIgnoreCase("fine") && paroleinserite!=1)
+                Arrays.sort(parole, 0, paroleinserite);
+        }while (!parole[paroleinserite-1].equalsIgnoreCase("fine") && paroleinserite< parole.length);
         //Stampa
         System.out.println("Array ordinato:");
         System.out.println();
